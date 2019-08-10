@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+					"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.spring.springboot.orm.mybatis.pagehelper.PageMapper">
+	<select id="selectAll"    resultType="org.spring.springboot.orm.mybatis.pagehelper.PageObject" >
+	  select *  from  mybatis_page 
+	</select>
+	
+	<select id="selectOrderInfo"    resultType="org.spring.springboot.orm.mybatis.pagehelper.OrderInfo" >
+	  select i.* from page_ext_order_info i , page_ext_order o where i.po_id=o.po_id  and  i.po_id=#{poid}
+	</select>
+	
+</mapper>
